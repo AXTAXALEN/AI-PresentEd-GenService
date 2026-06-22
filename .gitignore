@@ -1,0 +1,77 @@
+# ──────────────────────────────────────────────────────────
+# .gitignore для AI-PresentEd Generation Service
+# Положить в КОРЕНЬ репозитория (рядом с README.md и main.py).
+# ──────────────────────────────────────────────────────────
+
+# ── Секреты и переменные окружения ────────────────────────
+# РЕАЛЬНЫЙ .env с токенами НИКОГДА не пушим — только .env.example
+.env
+.env.*
+!.env.example
+
+# ── Python ─────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Виртуальные окружения (venv тяжёлый, чужой машине не нужен — там только requirements.txt)
+venv/
+.venv/
+env/
+.venv-*/
+venv-*/
+ENV/
+env.bak/
+venv.bak/
+
+# Тесты / покрытие
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
+.ruff_cache/
+
+# ── Модели и большие бинарные файлы ───────────────────────
+# Saiga Llama 3 GGUF ~4-5 ГБ — не пушим, инструкция по скачиванию в README
+models/*.gguf
+models/*.bin
+models/*.safetensors
+models/*.pt
+models/*.pth
+models/llama*
+!models/.gitkeep
+
+# ── Сгенерированный медиа-контент ─────────────────────────
+# Скачанные картинки перегенерируются при каждом запуске
+media/slides/*.jpg
+media/slides/*.jpeg
+media/slides/*.png
+media/slides/*.webp
+media/*.jpg
+media/*.png
+!media/.gitkeep
+
+# ── Логи и временные файлы ────────────────────────────────
+*.log
+logs/
+*.pid
+*.seed
+*.pid.lock
+
+# ── IDE и редакторы ───────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ── Системные и временные ─────────────────────────────────
+*.tmp
+*.bak
+*.orig
+*.rej
+*.diff
